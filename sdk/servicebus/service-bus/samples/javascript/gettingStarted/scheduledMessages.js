@@ -62,7 +62,7 @@ async function sendScheduledMessages(sbClient) {
 
 async function receiveMessages(sbClient) {
   // If receiving from a Subscription, use `createSubscriptionClient` instead of `createQueueClient`
-  const queueClient = ns.createQueueClient(queueName);
+  const queueClient = sbClient.createQueueClient(queueName);
 
   let numOfMessagesReceived = 0;
   const onMessageHandler = async (brokeredMessage) => {
